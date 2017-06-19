@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<link rel="stylesheet" href="css.css">
-	<body>
+<link rel="stylesheet" href="css.css">
 
-		<h1>Change Background</h1>
-			<button type="button" onclick="backgroundchanger()">Set background image</button>
+<body>
 
-			<script>
-			var x = 0;
-			var bgimg = ["url('backmain.jpg')","url('back2.jpg')" , "url('back3.jpg')"]
-			function backgroundchanger() {
-			document.body.style.backgroundImage = bgimg[x];
-			x=x+1;
-			if (x === 3){
-			x=0
-			}
-			}
-			</script>
-	</body>
+    <h1>Change Background</h1>
+    <button type="button" onclick="backgroundchanger()">Set background image</button>
+
+    <script>
+        var x = 0;
+        var bgimg = ["url('backmain.jpg')", "url('back2.jpg')", "url('back3.jpg')"]
+
+        function backgroundchanger() {
+            document.body.style.backgroundImage = bgimg[x];
+            x = x + 1;
+            if (x === 3) {
+                x = 0
+            }
+        }
+
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+        var time = today.getTime();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var day = today.getDay();
+        var dayarray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        if (dd < 10) {
+            dd = '0' + dd
+        }
+        if (mm < 10) {
+            mm = '0' + mm
+        }
+        if (h > 12) {
+            h = h - 12
+        }
+        if (m < 10) {
+            m = '0' + m
+        }
+        today = mm + '/' + dd + '/' + yyyy;
+        document.write("<br>Current Date " + dayarray[day] + ", " + today);
+        document.write("<br>Current Time " + h + ":" + m)
+        console.log(h)
+        console.log(m)
+    </script>
+</body>
+
 </html>
