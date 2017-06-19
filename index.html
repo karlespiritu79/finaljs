@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="css.css">
+	<body>
+
+		<h1>Change Background</h1>
+			<button type="button" onclick="backgroundchanger()">Set background image</button>
+
+			<script>
+			var x = 0;
+			var bgimg = ["url('backmain.jpg')","url('back2.jpg')" , "url('back3.jpg')"]
+			function backgroundchanger() {
+			document.body.style.backgroundImage = bgimg[x];
+			x=x+1;
+			if (x === 3){
+			x=0
+			}
+			}
+			</script>
+	</body>
+</html>
